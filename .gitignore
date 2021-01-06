@@ -1,3 +1,4 @@
 src/
 src_orig/
 bazel-*.zip
+manylinux-bazel/bazel

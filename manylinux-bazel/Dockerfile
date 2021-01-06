@@ -3,5 +3,5 @@ MAINTAINER  Stella Laurenzo <stellaraccident@gmail.com>
 
 USER root
 
-RUN yum install -y java-11-openjdk-headless
-COPY ./src/output/bazel /usr/local/bin
+RUN yum install -y java-11-openjdk-devel
+COPY ./bazel /usr/local/bin/

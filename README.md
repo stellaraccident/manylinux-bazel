@@ -26,3 +26,17 @@ export PATH=/opt/python/cp38-cp38/bin:$PATH
 bash ./build.sh
 ```
 
+## Creating docker image
+
+```shell
+cp src/output/bazel manylinux-bazel/
+docker build -t stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest manylinux-bazel/
+docker push stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest
+```
+
+## Test image
+
+```shell
+docker run --rm -it stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest /bin/bash
+bazel  # Verify that help comes up and does not complain.
+```
