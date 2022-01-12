@@ -10,6 +10,9 @@ won't be necessary some day.
 
 ## Building
 
+Note that at least as of bazel-4.2.1, we don't need to build a custom version
+anymore (seemingly). This section is kept for posterity.
+
 Do this in a docker container. The patching will mess up your system.
 
 ```shell
@@ -30,13 +33,13 @@ bash ./build.sh
 
 ```shell
 cp src/output/bazel manylinux-bazel/
-docker build -t stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest manylinux-bazel/
-docker push stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest
+docker build -t stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest manylinux-bazel/
+docker push stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest
 ```
 
 ## Test image
 
 ```shell
-docker run --rm -it stellaraccident/manylinux2014_x86_64-bazel-3.7.2:latest /bin/bash
+docker run --rm -it -v $(pwd):/work stellaraccident/manylinux2014_x86_64-bazel-4.2.1:latest /bin/bash
 bazel  # Verify that help comes up and does not complain.
 ```
