@@ -40,6 +40,6 @@ docker push stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest
 ## Test image
 
 ```shell
-docker run --rm -it -v $(pwd):/work stellaraccident/manylinux2014_x86_64-bazel-4.2.1:latest /bin/bash
+docker run --rm -it -v $(pwd):/work stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest /bin/bash
 bazel  # Verify that help comes up and does not complain.
 ```
