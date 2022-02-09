@@ -33,13 +33,13 @@ bash ./build.sh
 
 ```shell
 cp src/output/bazel manylinux-bazel/
-docker build -t stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest manylinux-bazel/
-docker push stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest
+docker build -t stellaraccident/manylinux2014_x86_64-bazel-5.0.0:latest manylinux-bazel/
+docker push stellaraccident/manylinux2014_x86_64-bazel-5.0.0:latest
 ```
 
 ## Test image
 
 ```shell
-docker run --rm -it -v $(pwd):/work stellaraccident/manylinux2014_x86_64-bazel-4.2.2:latest /bin/bash
+docker run --rm -it -v $(pwd):/work stellaraccident/manylinux2014_x86_64-bazel-5.0.0:latest /bin/bash
 bazel  # Verify that help comes up and does not complain.
 ```
